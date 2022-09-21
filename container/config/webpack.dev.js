@@ -6,10 +6,10 @@ const packageJson = require("../package.json");
 const devConfig = {
   mode: "development",
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: "http://localhost:8090/",
   },
   devServer: {
-    port: 8080,
+    port: 8090,
     historyApiFallback: {
       index: "/index.html",
     },
@@ -18,7 +18,7 @@ const devConfig = {
     new ModuleFederationPlugin({
       name: "container",
       remotes: {
-        helloReact: "helloReact@http://localhost:8081/remoteEntry.js",
+        helloReact: "helloReact@http://localhost:8091/remoteEntry.js",
       },
       shared: packageJson.dependencies,
     }),

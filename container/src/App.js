@@ -1,15 +1,16 @@
 import React from "react";
-import HelloReactApp from "./components/HelloReactApp";
 import { Route, Switch, Router, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import HelloReactApp from "./components/HelloReactApp";
+import HelloFlowrx from "./components/HelloFlowrx";
 
 const history = createBrowserHistory();
 
 const Header = () => (
   <div>
-    <Link to="/">home</Link>
+    <Link to="/">FlowRx</Link>
     <br />
-    <Link to="/react">use react</Link>
+    <Link to="/mbs">MBS</Link>
   </div>
 );
 
@@ -19,7 +20,8 @@ export default () => {
       <Header />
       <hr />
       <Switch>
-        <Route path="/" component={HelloReactApp} />
+        <Route path="/mbs" component={HelloReactApp} />
+        <Route path="/" component={HelloFlowrx} />
       </Switch>
     </Router>
   );
