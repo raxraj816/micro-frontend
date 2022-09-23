@@ -1,12 +1,12 @@
 import React from "react";
-import MBS from "../../public/mbs.jpg";
+import MBS from "../assets/mbs.JPG";
 
 const HelloMbs = () => {
   return (
     <div>
       Hello MBS!
-      <div style={{ border: "1px solid black", width: "150px" }}>
-        <img src={MBS} alt="MBS" style={{ width: "150px" }} />
+      <div>
+        <img src={MBS} alt="MBS" width={"100%"} />
       </div>
     </div>
   );

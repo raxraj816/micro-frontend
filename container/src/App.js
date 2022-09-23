@@ -1,28 +1,25 @@
 import React from "react";
-import { Route, Switch, Router, Link } from "react-router-dom";
+import "antd/dist/antd.css";
+import { Route, Switch, Router } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import HelloReactApp from "./components/HelloReactApp";
+import AppLayout from "./Layout";
+
+import HelloReactApp from "./pages/HelloReactApp";
 import HelloFlowrx from "./components/HelloFlowrx";
 
 const history = createBrowserHistory();
 
-const Header = () => (
-  <div>
-    <Link to="/">FlowRx</Link>
-    <br />
-    <Link to="/mbs">MBS</Link>
-  </div>
-);
-
-export default () => {
+const App = () => {
   return (
     <Router history={history}>
-      <Header />
-      <hr />
-      <Switch>
-        <Route path="/mbs" component={HelloReactApp} />
-        <Route path="/" component={HelloFlowrx} />
-      </Switch>
+      <AppLayout>
+        <Switch>
+          <Route exact path="/mbs" component={HelloReactApp} />
+          <Route path="/" component={HelloFlowrx} />
+        </Switch>
+      </AppLayout>
     </Router>
   );
 };
+
+export default App;
